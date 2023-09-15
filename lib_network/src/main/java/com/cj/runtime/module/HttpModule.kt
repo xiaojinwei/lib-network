@@ -55,7 +55,7 @@ object HttpModule {
                 return chain.proceed(globalHttpHandler.onHttpRequest(chain, chain.request()))
             }
         })
-        val cache = Cache(cacheFile, NetConfig.NET_CACHE_SIZE)
+        /*val cache = Cache(cacheFile, NetConfig.NET_CACHE_SIZE)
         val cacheInterceptor: Interceptor = object : Interceptor {
             @Throws(IOException::class)
             override fun intercept(chain: Interceptor.Chain): Response {
@@ -96,7 +96,7 @@ object HttpModule {
         //设置缓存
         builder.addInterceptor(cacheInterceptor)
         builder.addNetworkInterceptor(cacheInterceptor)
-        builder.cache(cache)
+        builder.cache(cache)*/
 
         //日志打印
         builder.addNetworkInterceptor(globalInterceptor)
